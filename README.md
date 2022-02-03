@@ -1,5 +1,5 @@
 
-![Logo](https://dev-to-uploads.s3.amazonaws.com/uploads/articles/th5xamgrr6se0x5ro4g6.png)
+![Logo](https://cdn.discordapp.com/attachments/890694657980399636/938654177721212958/fitnesslogo.png)
 
 
 # Fitness Tracker

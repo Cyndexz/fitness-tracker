@@ -1,5 +1,7 @@
+#image_resize
 
-![super-necessary](/image/fitnesslogo.png| width=100)
+## super-necessary image
+![super-necessary](/images/fitnesslogo.png | width=100)
 
 
 # Fitness Tracker

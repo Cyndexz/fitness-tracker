@@ -1,5 +1,5 @@
 
-![](https://cdn.discordapp.com/attachments/890694657980399636/938654929088823326/fitnesslogo.png | width=100)
+![](https://gyazo.com/eb5c5741b6a9a16c692170a41a49c858.png | width=100)
 
 
 # Fitness Tracker

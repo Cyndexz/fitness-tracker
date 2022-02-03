@@ -41,7 +41,7 @@ const ResponsiveAppBar = () => {
             <Menu id="menu-appbar" anchorEl={anchorElNav} anchorOrigin={{vertical: 'bottom',horizontal: 'left',}} keepMounted transformOrigin={{vertical: 'top',horizontal: 'left',}} open={Boolean(anchorElNav)} onClose={handleCloseNavMenu} sx={{display: { xs: 'block', md: 'none' },}}>
               {MenuItems.map((item, index) => (
                   <MenuItem key={index} onClick={handleCloseNavMenu}>
-                    <Typography textAlign="center"><a href={item.url}>{item.title}</a></Typography>
+                    <Typography textAlign="center"><a className={classes.navLinks} href={item.url}>{item.title}</a></Typography>
                   </MenuItem>
               ))}
             </Menu>
@@ -54,7 +54,7 @@ const ResponsiveAppBar = () => {
           <Box sx={{ flexGrow: 1, display: { xs: 'none', md: 'flex' } }}>
             {MenuItems.map((item, index) => (
               <Button key={index} onClick={handleCloseNavMenu} sx={{ my: 2, color: 'white', display: 'block' }}>
-                <a href={item.url}>{item.title}</a>
+                <a className={classes.navLinks} href={item.url}>{item.title}</a>
               </Button>
             ))}
           </Box>
@@ -70,7 +70,7 @@ const ResponsiveAppBar = () => {
             <Menu sx={{ mt: '45px' }} id="menu-appbar" anchorEl={anchorElUser} anchorOrigin={{ vertical: 'top', horizontal: 'right',}} keepMounted transformOrigin={{ vertical: 'top', horizontal: 'right',}} open={Boolean(anchorElUser)} onClose={handleCloseUserMenu}>
               {Settings.map((setting, index) => (
                 <MenuItem key={index} onClick={handleCloseUserMenu}>
-                  <Typography textAlign="center"><a href={setting.url}> {setting.title} </a></Typography>
+                  <Typography textAlign="center"><a className={classes.navLinksv2} href={setting.url}> {setting.title} </a></Typography>
                 </MenuItem>
               ))}
             </Menu>

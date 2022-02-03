@@ -18,7 +18,14 @@ export default makeStyles((theme) => ({
         justifyContent: 'end',
     },
     navLinks: {
+        fontSize: '17px',
         color: 'white',
+        textDecoration: 'none',
+        padding: '.5rem 1 rem',
+    },
+    navLinksv2: {
+        fontSize: '17px',
+        color: 'Grey',
         textDecoration: 'none',
         padding: '.5rem 1 rem',
     },

@@ -2,40 +2,33 @@ export const MenuItems = [
     {
         title: 'Home',
         url: '/',
-        cName: 'navLinks'
     },
     {
         title: 'Meals',
-        url: 'https://youtube.com',
-        cName: 'navLinks'
+        url: '/meals',
     },
     {
         title: 'Workouts',
-        url: '#',
-        cName: 'navLinks'
+        url: '/workouts',
     },
     {
         title: 'Track Meals',
-        url: '#',
-        cName: 'navLinks'
+        url: '/trackmeals',
     },
     {
         title: 'Track Workouts',
-        url: '#',
-        cName: 'navLinks'
+        url: '/trackworkouts',
     },
 ]
 
 export const Settings =[
     {
         title: 'Profile',
-        url: '#',
-        cName: 'navLinks'
+        url: '/profile:id',
     },
     {
         title: 'Logout',
-        url: '#',
-        cName: 'navLinks'
+        url: '/',
     },
 ]
 

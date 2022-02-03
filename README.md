@@ -1,10 +1,6 @@
-#image_resize
-
-## super-necessary image
-<img src="https://cdn.discordapp.com/attachments/890694657980399636/938654929088823326/fitnesslogo.png" width="250" height="200"/>
-
-
 # Fitness Tracker
+
+<img src="https://cdn.discordapp.com/attachments/890694657980399636/938654929088823326/fitnesslogo.png" width="250" height="200"/>
 
 Web application tracks the eating, workout, and weight.  
 

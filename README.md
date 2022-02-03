@@ -1,7 +1,7 @@
 #image_resize
 
 ## super-necessary image
-![super-necessary](/images/fitnesslogo.png | width=100)
+<img src="https://cdn.discordapp.com/attachments/890694657980399636/938654929088823326/fitnesslogo.png" width="250" height="200"/>
 
 
 # Fitness Tracker

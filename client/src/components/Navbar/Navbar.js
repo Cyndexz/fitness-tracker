@@ -27,9 +27,10 @@ const ResponsiveAppBar = () => {
   };
 
   return (
+    <>
     <AppBar className={classes.appbar} position="fixed">
       <Container maxWidth="xl">
-        <Toolbar disableGutters>
+        <Toolbar classesdisablegutters>
           <Typography variant="h6" noWrap component="div" sx={{ mr: 2, display: { xs: 'none', md: 'flex' } }}>
             <img height='100px' src={logo} alt="Fitness"/>
           </Typography>
@@ -40,7 +41,7 @@ const ResponsiveAppBar = () => {
             </IconButton>
             <Menu id="menu-appbar" anchorEl={anchorElNav} anchorOrigin={{vertical: 'bottom',horizontal: 'left',}} keepMounted transformOrigin={{vertical: 'top',horizontal: 'left',}} open={Boolean(anchorElNav)} onClose={handleCloseNavMenu} sx={{display: { xs: 'block', md: 'none' },}}>
               {MenuItems.map((item, index) => (
-                  <MenuItem key={index} onClick={handleCloseNavMenu}>
+                <MenuItem key={index} onClick={handleCloseNavMenu}>
                     <Typography textAlign="center"><a className={classes.navLinks} href={item.url}>{item.title}</a></Typography>
                   </MenuItem>
               ))}
@@ -63,7 +64,7 @@ const ResponsiveAppBar = () => {
           <Box sx={{ flexGrow: 0 }}>
             <Tooltip title="Open settings">
               <IconButton onClick={handleOpenUserMenu} sx={{ p: 0 }}>
-                <Avatar sx={{height:'70px', width:'70px'}} alt="Remy Sharp" src="/static/images/avatar/2.jpg" />
+                <Avatar sx={{height:'70px', width:'70px'}} alt="Undefined" src="https://cdn-icons.flaticon.com/png/512/2340/premium/2340099.png?token=exp=1643952820~hmac=bbd83d0407cd7549a5e767edeb7cb739" />
               </IconButton>
             </Tooltip>
 
@@ -78,6 +79,8 @@ const ResponsiveAppBar = () => {
         </Toolbar>
       </Container>
     </AppBar>
+    <Toolbar className={classes.appSpace}/>          
+    </>
   );
 };
 export default ResponsiveAppBar;

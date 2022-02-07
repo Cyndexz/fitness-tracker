@@ -48,8 +48,6 @@ export default makeStyles((theme) => ({
     //     zIndex: '-1',
     // },
 
-
-
     wrapper: {
         display: 'flex',
         justifyContent: 'center',
@@ -62,23 +60,23 @@ export default makeStyles((theme) => ({
     title: {
         display: 'flex',
         justifyContent: 'center',
-        width: '1080px',
+        width: '100%',
         flexDirection: 'column',
         alignItems: 'center',
         zindex: '1',
-        marginTop: '100px',
-        margin: '10px 0',
+        margin: '0',
         position: 'relative',
-        fontSize: '7rem',
+        fontSize: '5rem',
         color: 'white',
         textShadow: '0 0 5px black',
+        marginTop: '70px',
     },
     section: {
         width: '100%',
         display: 'flex',
         alignItems: 'center',
         zindex: '1',
-        marginTop: '300px',
+        marginTop: '320px',
         textAlign: 'center',
         flexdirection: 'column',
         fontSize: '2rem',
@@ -115,6 +113,25 @@ export default makeStyles((theme) => ({
         flexDirection: 'column',
         alignItems: 'center',
         zindex: '1',
-        marginTop: '205px',
+        marginTop: '',
     },
+    headers:{
+        display: 'flex',
+        fontSize: '3rem'
+    },
+    pics:{
+        display:'inline-block', 
+        width: '300px',
+        height: '300px',
+        margin: '30px',
+    },
+    text:{
+        display:'inline-block', 
+        width: '300px',
+        textAlign: 'center',
+        alignItems: 'center',
+        fontSize: '2rem',
+        marginInlineStart: '10px',
+        marginInlineEnd: '50px',
+    }
 }))

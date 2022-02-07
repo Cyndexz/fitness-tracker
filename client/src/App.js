@@ -1,11 +1,13 @@
 import React from 'react';
-import Navbar from './components/Navbar/Navbar'
+import Navbar from './components/Navbar/Navbar';
+import Profile from './components/Profile/Profile';
+import Auth from './components/Auth/Auth';
 
 function App() {
     return(
         <div>
-            <Navbar/>
-            <h1>Hello Gamers!!!!</h1>
+    
+            <Profile/>
         </div>
     );
 }

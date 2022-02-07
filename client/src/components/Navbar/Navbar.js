@@ -4,6 +4,7 @@ import MenuIcon from '@mui/icons-material/Menu';
 import logo from '../../images/fitnesslogo.png';
 import useStyles from './styles';
 import { MenuItems, Settings } from './MenuItems';
+import icon from '../../images/user.png'
 
 const ResponsiveAppBar = () => {
   const classes = useStyles();
@@ -64,7 +65,11 @@ const ResponsiveAppBar = () => {
           <Box sx={{ flexGrow: 0 }}>
             <Tooltip title="Open settings">
               <IconButton onClick={handleOpenUserMenu} sx={{ p: 0 }}>
+<<<<<<< HEAD
                 <Avatar sx={{height:'70px', width:'70px'}} alt="Undefined" src="https://cdn-icons.flaticon.com/png/512/2340/premium/2340099.png?token=exp=1643952820~hmac=bbd83d0407cd7549a5e767edeb7cb739" />
+=======
+                <Avatar sx={{height:'70px', width:'70px'}} alt="Undefined" src={icon}/>
+>>>>>>> home_branch
               </IconButton>
             </Tooltip>
 

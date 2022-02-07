@@ -1,9 +1,9 @@
 import { configureStore } from "@reduxjs/toolkit";
-import { quoteApi } from "../services/quoteAPI";
+import { quotesApi } from "../services/quotesApi";
 
 export default configureStore({
-    reducer:{
-        [quoteApi.reducerPath]: quoteApi.reducer
+    reducer: {
+        [quotesApi.reducerPath]: quotesApi.reducer
     },
-    middleware:(getDefaultMiddleware) => getDefaultMiddleware().concat(quoteApi.middleware),
+    middleware: (getDefaultMiddleware) => getDefaultMiddleware().concat(quotesApi.middleware)
 });

@@ -13,7 +13,6 @@ import MuiAlert from "@mui/material/Alert";
 
 //Test
 import icon from '../../images/user.png'
-import profilePicture from '../../images/test_image_profile.png';
 import workoutTypePic1 from '../../images/running.jpg';
 import workoutTypePic2 from '../../images/swimming.jpg';
 import workoutTypePic3 from '../../images/stairStepper.jpg';

@@ -1,6 +1,6 @@
 import  React, { useEffect, useState } from 'react';
 import useStyles from './styles';
-import { useGetQuotesQuery } from '../../services/quotesApi.js';
+//import { useGetQuotesQuery } from '../../services/quotesApi.js';
 import foodlogo from '../../images/healthy-food.png';
 import trackApp from '../../images/tracking-app.png';
 import weight from '../../images/weights.png'
@@ -10,18 +10,20 @@ export const Home = () => {
     const classes = useStyles();
     const [offsetY, setoffsetY] = useState(0);
     const handleScroll = () => setoffsetY(window.pageYOffset);
-    const data = useGetQuotesQuery();
-    
+    //const data = useGetQuotesQuery();
+    const data = "Many of us take better care of our automobiles than we do of our bodies... yet the auto has replaceable parts";
     useEffect (() => {
       window.addEventListener('scroll', handleScroll);
       
       return () => window.removeEventListener("scroll", handleScroll);
     }, []);
+    //      <h1 className={classes.title}> [ {data?.data?.quote} ] {data?.data?.author ? "- "+data?.data?.author : ""} </h1>
     
     const renderContent = () => (
       <>
         <div className={classes.wrapper}>
-          <h1 className={classes.title}> [ {data?.data?.quote} ] {data?.data?.author ? "- "+data?.data?.author : ""} </h1>
+          <h1 className={classes.title}> "Many of us take better care of our automobiles than we do of our bodies... yet the auto has replaceable parts" <br/>- Bj. Palmer </h1>
+
         </div>
 
         <section className={classes.section}>	
@@ -49,7 +51,7 @@ export const Home = () => {
            same answer. It had become such an ingrained part of his daily routine that he had to step back and actively think when he heard the little girl's</p>
         </div>
         <footer>
-          © Devsquad established in 2020
+          © Devsquad established in 2021
         </footer>
 
       </>

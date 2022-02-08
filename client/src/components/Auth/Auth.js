@@ -36,17 +36,14 @@ const SignUp = () => {
 
   return(
     <div className={classes.background}> 
-  
-    <div className={classes.centerPaper}>
-
-      <Paper className={classes.paper} elevation={3}>
+      <div className={classes.centerPaper}>
+        <Paper className={classes.paper} elevation={6}>
           <Avatar className={classes.avatar}>
             <LockOutlinedIcon />
           </Avatar>
           <Typography component="h1" variant="h5">{ isSignup ? 'Sign up' : 'Sign in' }</Typography>
           <form className={classes.form} onSubmit={handleSubmit}>
-            <Grid container spacing={2}>
-        
+            <Grid container spacing={2}>        
               <Input name="userName" label="User Name" handleChange={handleChange} type="userName" />
               <Input name="password" label="Password" handleChange={handleChange} type={showPassword ? 'text' : 'password'} handleShowPassword={handleShowPassword} />
               { isSignup && <Input name="confirmPassword" label="Repeat Password" handleChange={handleChange} type="password" /> }
@@ -54,7 +51,6 @@ const SignUp = () => {
             <Button type="submit" fullWidth variant="contained" color="primary" className={classes.submit}>
               { isSignup ? 'Sign Up' : 'Sign In' }
             </Button>
-
             <Grid container justifyContent="flex-end">
               <Grid item>
                 <Button onClick={switchMode}>

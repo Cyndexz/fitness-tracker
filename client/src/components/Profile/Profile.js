@@ -121,23 +121,23 @@ const Profile = () => {
                                     </Grid>
                                 </Grid> 
                                 : 
-                                <Grid height={300} zeroMinWidth container direction={"column"} spacing={3} >
-                                    <Grid item xs={4} md={2}>
+                                <Grid height={300}  container direction={"column"} spacing={3} >
+                                    <Grid zeroMinWidth item xs={4} md={2}>
                                         <Typography noWrap sx={{fontSize:40}}>Age: {age}</Typography>
                                     </Grid>
-                                    <Grid item xs={4} md={2}>
+                                    <Grid zeroMinWidth item xs={4} md={2}>
                                         <Typography noWrap sx={{fontSize:40}}>Gender: {gender}</Typography>
                                     </Grid>
-                                    <Grid item xs={4} md={2}>
+                                    <Grid zeroMinWidth item xs={4} md={2}>
                                         <Typography noWrap sx={{fontSize:40}}>Name: {name}</Typography>
                                     </Grid>
-                                    <Grid item xs={4} md={2}>
+                                    <Grid zeroMinWidth item xs={4} md={2}>
                                         <Typography noWrap sx={{fontSize:40}}>Weight: {weight}lbs</Typography>
                                     </Grid>
-                                    <Grid item xs={4} md={2}>
+                                    <Grid zeroMinWidth item xs={4} md={2}>
                                         <Typography noWrap sx={{fontSize:40}}>BFP: {bfp}%</Typography>
                                     </Grid>
-                                    <Grid item xs={4} md={2}>
+                                    <Grid zeroMinWidth item xs={4} md={2}>
                                         <Typography noWrap sx={{fontSize:40}}>Height: {height}</Typography>
                                     </Grid>
                                 </Grid>       

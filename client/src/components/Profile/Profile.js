@@ -1,5 +1,5 @@
 import React, {useState} from 'react';
-import {Container, Grid , Paper, TextField, Typography, Box,Card,CardContent, IconButton, FormControl, InputLabel, NativeSelect} from '@mui/material';
+import {Container, Grid , Paper, TextField, Typography, Box,Card,CardContent, IconButton, FormControl, InputLabel, NativeSelect, Avatar} from '@mui/material';
 import useStyles from './styles';
 import { useTheme } from '@mui/material/styles';
 import ModeIcon from '@mui/icons-material/Mode';
@@ -93,7 +93,7 @@ const Profile = () => {
             <NavBar/>
             <Grid container spacing={2}>
                 <Grid item xs={12} sm={12} md={6} className={classes.grid} container >
-                    <img src={icon} className={classes.profilePicture} />
+                    <Avatar src={icon} className={classes.profilePicture} sx={{ width: 400  , height: 400 }}/>
                 </Grid>
                 <Grid item xs={12} sm={12} md={6} >
                     <Card sx={{minWidth:"auto", minHeight:300}}>

@@ -1,20 +1,15 @@
 import { makeStyles } from '@material-ui/core/styles';
 import { maxHeight } from '@mui/system';
 //181a1b
+const buttonSize = '200px';
 export default makeStyles((theme) => ({
   
-   CynthiaIsGay: {
-    maxWidth: 'inherit',
-    maxHeight: 'inherit',
-    background: 'linear-gradient(to bottom, #ffcf40, #ffae00)',
-  },
-  
+
   root: {
     '& .MuiTextField-root': {
       margin: theme.spacing(1),
     },
   },
-
   grid:{
     alignItems: "center", 
     justifyContent: "center",
@@ -23,22 +18,12 @@ export default makeStyles((theme) => ({
   profilePicture:{
     alignItems: 'center',
     backgroundSize: 'cover',
-   
-    width: 'auto',
-    height: 'auto',
-
+    width: '400px',
+    height: '400px',
   },
-
-
-
-
   paper: {
-    padding: theme.spacing(3),
+    padding: theme.spacing(2),
     background: '#d1d1d1',
-    
-    // height:'',
-    // paddingBottom:''
-
   },
   form: {
     display: 'flex',
@@ -62,29 +47,30 @@ export default makeStyles((theme) => ({
     color: "#e61e29" 
   },  
   buttonSubmit: {
-    margin: 10,
-    width: "300px",
+    margin: 2,
+    width: buttonSize,
     height: '50px',
     backgroundColor: "grey",
     color: "white",
     alignItems: "center"
   },
   buttonCancel: {
-    margin: 0,
-    width: "300px",
+    margin: 1,
+    width: buttonSize,
     height: '50px',
     backgroundColor: "green",
     color: "white",
     alignItems: "center"
   },
-  // mainContainer: {
-  
-  //   // box-sizing: border-box;
-  //   // margin-right: auto;
-  //   // display: block;
-  //   // padding-left: 16px;
-  //   // padding-right: 16px;
-  // },
+  buttonKg:{
+    marginTop: 100,
+    width: buttonSize,
+    height: '135px',
+    width: "100%",
+    backgroundColor: "orange",
+    color: "white",
+    alignItems: "center"
+  },
   boxInfo: {
   
     height: '200px'

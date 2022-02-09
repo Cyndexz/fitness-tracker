@@ -2,7 +2,7 @@ import { makeStyles } from '@material-ui/core/styles';
 
 export default makeStyles((theme) => ({
     appbar:{
-        backgroundColor: 'rgba(0, 0, 0, 0.07)',
+        backgroundColor: 'rgba(0, 0, 0, 0.08    )',
         display: 'flex',
         flexDirection: 'row',
         padding: '10px 50px',

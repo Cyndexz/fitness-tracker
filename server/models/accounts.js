@@ -1,14 +1,11 @@
 import mongoose from 'mongoose';
 
-const accountsSchema = mongoose.Schema({
-    username: String,
-    password: String,
-    createdAt: {
-        type: Date,
-        default: new Date()
-    }
-})
+//Each Post will have to have these things 
+const userSchema = mongoose.Schema({
+    name: {type: String, required: true},
+    email: {type: String, required: true},
+    password: {type: String, required: true},
+    id: {type: String }
+});
 
-var accountsMessage = mongoose.model('accountsMessage', accountsSchema);
-
-export default accountsMessage;
+export default mongoose.model("User", userSchema);

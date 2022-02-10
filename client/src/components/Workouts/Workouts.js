@@ -83,12 +83,13 @@ const Workouts = () => {
 
   const [rangeDate, setRangeDate] = useState([null, null]);
   
-  const renderRangePicker = () =>(
+  const renderRangePicker = () =>(              //Look into not going past current date
         <LocalizationProvider dateAdapter={AdapterDateFns}>
           <DateRangePicker
             startText=" Starting Day"
             endText="Ending Day"
             value={rangeDate}
+            maxDate="defaultMaxDate"
             onChange={(newValue) => {
               setRangeDate(newValue);
             }}

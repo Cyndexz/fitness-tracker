@@ -6,14 +6,12 @@ export default makeStyles((theme) => ({
     wrapper: {
         display: 'flex',
         justifyContent: 'center',
-        width: '1080px',
         flexDirection: 'column',
         alignItems: 'center',
         zindex: '1',
         marginTop: '100px',
     },
     title: {
-        display: 'flex',
         justifyContent: 'center',
         width: '100%',
         flexDirection: 'column',
@@ -24,19 +22,14 @@ export default makeStyles((theme) => ({
         fontSize: '5rem',
         color: 'white',
         textShadow: '0 0 5px black',
-        marginTop: '70px',
+        paddingTop: '200px'
+        
     },
     section: {
-        width: '100%',
         display: 'flex',
         alignItems: 'center',
-        zindex: '1',
         marginTop: '320px',
         textAlign: 'center',
-        flexdirection: 'column',
-        fontSize: '2rem',
-        color: 'black',
-        fontFamily: 'Merriweather serif',
     },
     parallex_content: {
         display: 'flex',
@@ -64,29 +57,28 @@ export default makeStyles((theme) => ({
     parallexdiv: {
         display: 'flex',
         justifyContent: 'center',
-        width: '1080px',                //take off to have text span all the way
         flexDirection: 'column',
         alignItems: 'center',
-        zindex: '1',
-        marginTop: '',
     },
     headers:{
         display: 'flex',
-        fontSize: '3rem'
+        fontSize: '3rem',
+        paddingTop: '560px',
+        zindez: '1',
     },
     pics:{
-        display:'inline-block', 
-        width: '300px',
-        height: '300px',
-        margin: '30px',
+        width: '250px',
+        height: '250px',
+        marginTop: '30px',
+        padding: '30px',
+        marginLeft: '77px',
     },
     text:{
-        display:'inline-block', 
         width: '300px',
         textAlign: 'center',
         alignItems: 'center',
-        fontSize: '2rem',
-        marginInlineStart: '10px',
-        marginInlineEnd: '50px',
-    }
+        fontSize: '1.25rem',
+        padding: '30px',
+        marginLeft: '77px',
+    },
 }))

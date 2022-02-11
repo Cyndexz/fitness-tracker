@@ -2,7 +2,6 @@ import { makeStyles } from '@material-ui/core/styles';
 
 export default makeStyles((theme) => ({
     appbar:{
-        backgroundColor: 'rgba(0, 0, 0, 0.07)',
         display: 'flex',
         flexDirection: 'row',
         padding: '10px 50px',
@@ -30,6 +29,6 @@ export default makeStyles((theme) => ({
         padding: '.5rem 1 rem',
     },
     appSpace:{
-        paddingTop: '30px',
+        paddingTop: '56px',
     }
 }))

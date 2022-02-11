@@ -29,9 +29,9 @@ const ResponsiveAppBar = () => {
 
   return (
     <>
-    <AppBar className={classes.appbar} position="fixed">
+    <AppBar className={classes.appbar} sx={{backgroundColor: 'rgba(0, 143, 255, 1)'}} position="fixed">
       <Container maxWidth="xl">
-        <Toolbar classesdisablegutters>
+        <Toolbar disableGutters>
           <Typography variant="h6" noWrap component="div" sx={{ mr: 2, display: { xs: 'none', md: 'flex' } }}>
             <img height='100px' src={logo} alt="Fitness"/>
           </Typography>
@@ -80,7 +80,7 @@ const ResponsiveAppBar = () => {
         </Toolbar>
       </Container>
     </AppBar>
-    <Toolbar className={classes.appSpace}/>          
+    <Toolbar className={classes.appSpace}/>
     </>
   );
 };

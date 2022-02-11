@@ -40,6 +40,7 @@ const Profile = () => {
     const weight = 200;
     const bfp = 20;
     const height = "5 '10";
+    //Picture
     //
     
     const dateArray  = ['Feb','Jan','March', 'April'];
@@ -91,11 +92,13 @@ const Profile = () => {
     return( 
         <Container maxWidth="xl" sx={{marginTop: 8}}>    
             <NavBar/>
+            
             <Grid container spacing={2}>
                 <Grid item xs={12} sm={12} md={6} className={classes.grid} container >
                     <Avatar src={icon} className={classes.profilePicture} sx={{ width: 400  , height: 400 }}/>
                 </Grid>
-                <Grid item xs={12} sm={12} md={6} >
+
+                <Grid item xs={12} sm={12} md={6} >    
                     <Card sx={{minWidth:"auto", minHeight:300}}>
                         <CardContent align="left">
                             <Typography align="center" variant="h4">Profile</Typography>
@@ -155,6 +158,8 @@ const Profile = () => {
                         </CardContent>
                    </Card>
                 </Grid>
+
+                
                 <Grid item xs={12} sm={12} md={7} >
                     <Paper className={classes.paper}>
                         <Grid container >
@@ -177,6 +182,7 @@ const Profile = () => {
                         </Grid>
                     </Paper>
                 </Grid>
+
                 <Grid item xs={12} sm={12} md={5} >
                     <Paper className={classes.paper}>
                         <Paper >
@@ -198,7 +204,9 @@ const Profile = () => {
                         </Grid>
                     </Paper>
                 </Grid>
+
             </Grid>
+
             <Snackbar open={openSuccess} autoHideDuration={6000} onClose={handleClose}>
                 <Alert onClose={handleClose} severity="success" sx={{ width: "100%" }}>
                     Data Enter Success!

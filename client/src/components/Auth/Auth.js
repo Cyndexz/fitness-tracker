@@ -3,13 +3,20 @@ import { Avatar, Button, Paper, Grid, Typography, Container } from '@material-ui
 import LockOutlinedIcon from '@material-ui/icons/LockOutlined';
 import useStyles from './styles';
 import Input from './Input';
+import { useDispatch } from 'react-redux';
+import { Link } from 'react-router-dom';
+import { signin,signup } from '../../actions/accounts.js';
+import { useNavigate } from 'react-router-dom';
 
-const initialState = { firstName: '', lastName: '', email: '', password: '', confirmPassword: '' };
+const initialState = { firstName: '', email: '', password: '', confirmPassword: '' , lastName: ''};
 
 const SignUp = () => {
   const [form, setForm] = useState(initialState);
   const [isSignup, setIsSignup] = useState(false);
   const classes = useStyles();
+  const navigate = useNavigate();
+  //Adding dispatcher
+  const dispatch = useDispatch();
 
   const [showPassword, setShowPassword] = useState(false);
   const handleShowPassword = () => setShowPassword(!showPassword);
@@ -25,10 +32,15 @@ const SignUp = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
 
+    /*
+      Connecting Backend Code
+    */
     if (isSignup) {
+      dispatch(signup(form,navigate));
+
       console.log("Signup")
     } else {
-      console.log("login") 
+      dispatch(signin(form,navigate))
     }
   };
   
@@ -46,10 +58,15 @@ const SignUp = () => {
           <Typography component="h1" variant="h5">{ isSignup ? 'Sign up' : 'Sign in' }</Typography>
           <form className={classes.form} onSubmit={handleSubmit}>
             <Grid container spacing={2}>
-        
-              <Input name="userName" label="User Name" handleChange={handleChange} type="userName" />
-              <Input name="password" label="Password" handleChange={handleChange} type={showPassword ? 'text' : 'password'} handleShowPassword={handleShowPassword} />
-              { isSignup && <Input name="confirmPassword" label="Repeat Password" handleChange={handleChange} type="password" /> }
+              {isSignup && (
+                <>
+                    <Input name="firstName" label="First Name" handleChange={handleChange} autoFocus half/>
+                    <Input name="lastName" label="Last Name" handleChange={handleChange} half/>
+                </>
+              )}
+            <Input name="email" label="Email Address" handleChange={handleChange} type="email" />
+            <Input name="password" label="Password" handleChange={handleChange} type={showPassword ? "text" : "password"} handleShowPassword={handleShowPassword}/>
+            { isSignup && <Input name="confirmPassword" label="Repeat Password" handleChange={handleChange} type="password" /> }
             </Grid>
             <Button type="submit" fullWidth variant="contained" color="primary" className={classes.submit}>
               { isSignup ? 'Sign Up' : 'Sign In' }

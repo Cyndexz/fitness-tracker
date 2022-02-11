@@ -21,7 +21,7 @@ export const Home = () => {
     const renderContent = () => (
       <>
         <div className={classes.wrapper}>
-          <h1 className={classes.title}> [ {data?.data?.quote} ] {data?.data?.author ? "- "+data?.data?.author : ""} </h1>
+          <h1 className={classes.title}> {/*[ {data?.data?.quote} ] {data?.data?.author ? "- "+data?.data?.author : ""}*/} Fitness Tracker</h1>
         </div>
 
         <section className={classes.section}>	

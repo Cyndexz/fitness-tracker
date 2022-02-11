@@ -4,7 +4,9 @@ import LockOutlinedIcon from '@material-ui/icons/LockOutlined';
 import useStyles from './styles';
 import Input from './Input';
 import { useDispatch } from 'react-redux';
+import { Link } from 'react-router-dom';
 import { signin,signup } from '../../actions/accounts.js';
+import { useNavigate } from 'react-router-dom';
 
 const initialState = { firstName: '', email: '', password: '', confirmPassword: '' , lastName: ''};
 
@@ -12,6 +14,7 @@ const SignUp = () => {
   const [form, setForm] = useState(initialState);
   const [isSignup, setIsSignup] = useState(false);
   const classes = useStyles();
+  const navigate = useNavigate();
   //Adding dispatcher
   const dispatch = useDispatch();
 
@@ -33,12 +36,11 @@ const SignUp = () => {
       Connecting Backend Code
     */
     if (isSignup) {
-      dispatch(signup(form));
+      dispatch(signup(form,navigate));
 
       console.log("Signup")
     } else {
-      dispatch(signin(form));
-      console.log("login") 
+      dispatch(signin(form,navigate))
     }
   };
   

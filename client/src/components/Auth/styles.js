@@ -9,7 +9,7 @@ export default makeStyles((theme) => ({
     justifyContent: 'center',
     width: '100%',
     height: '100%',
-    aspectRatio: '',
+    
     backgroundRepeat: 'no-repeat',
     backgroundSize: 'cover',
     position: 'absolute', 
@@ -24,7 +24,7 @@ export default makeStyles((theme) => ({
 
   },
   paper: {
-  
+    width:"400px",
     display: 'inline-flex',
     flexDirection: 'column',
     alignItems: 'center',

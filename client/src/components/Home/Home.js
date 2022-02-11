@@ -1,6 +1,6 @@
 import  React, { useEffect, useState } from 'react';
 import useStyles from './styles';
-import { useGetQuotesQuery } from '../../services/quotesApi.js';
+//import { useGetQuotesQuery } from '../../services/quotesApi.js';
 import foodlogo from '../../images/healthy-food.png';
 import trackApp from '../../images/tracking-app.png';
 import weight from '../../images/weights.png'
@@ -18,6 +18,7 @@ export const Home = () => {
       
       return () => window.removeEventListener("scroll", handleScroll);
     }, []);
+    //      <h1 className={classes.title}> [ {data?.data?.quote} ] {data?.data?.author ? "- "+data?.data?.author : ""} </h1>
     
     const renderContent = () => (
       <>

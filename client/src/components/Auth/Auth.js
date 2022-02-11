@@ -48,10 +48,8 @@ const SignUp = () => {
 
   return(
     <div className={classes.background}> 
-  
-    <div className={classes.centerPaper}>
-
-      <Paper className={classes.paper} elevation={3}>
+      <div className={classes.centerPaper}>
+        <Paper className={classes.paper} elevation={6}>
           <Avatar className={classes.avatar}>
             <LockOutlinedIcon />
           </Avatar>
@@ -71,7 +69,6 @@ const SignUp = () => {
             <Button type="submit" fullWidth variant="contained" color="primary" className={classes.submit}>
               { isSignup ? 'Sign Up' : 'Sign In' }
             </Button>
-
             <Grid container justifyContent="flex-end">
               <Grid item>
                 <Button onClick={switchMode}>

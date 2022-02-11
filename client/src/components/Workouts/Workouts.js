@@ -75,7 +75,7 @@ const Workouts = () => {
           InputLabelProps={{
             shrink: true,
           }}
-          InputProps={{endAdornment: <InputAdornment position="end">cal</InputAdornment>}}
+          InputProps={{endAdornment: <InputAdornment position="end">min</InputAdornment>}}
         />
     </FormControl>
     </Box>

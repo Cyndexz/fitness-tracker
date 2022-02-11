@@ -21,15 +21,9 @@ export const Home = () => {
     
     const renderContent = () => (
       <>
-<<<<<<< HEAD
-        <div className={classes.wrapper}>
-          <h1 className={classes.title}> {/*[ {data?.data?.quote} ] {data?.data?.author ? "- "+data?.data?.author : ""}*/} Fitness Tracker</h1>
-        </div>
-=======
           {/* <h1 className={classes.title}> [ {data?.data?.quote} ] {data?.data?.author ? "- "+data?.data?.author : ""} </h1> */}
         
         <Typography className={classes.title} display="flex" variant="h1"> Fitness Tracker</Typography>
->>>>>>> 9691ae5 (Add Workouts page. Make Homepage responsive.)
 
         <Container >
           <Typography variant="h3"  gutterBottom className={classes.headers} style={{ transform: `translate(${offsetY * -.1}px)` }}>

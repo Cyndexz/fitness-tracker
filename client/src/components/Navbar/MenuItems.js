@@ -28,7 +28,7 @@ export const Settings =[
     },
     {
         title: 'Logout',
-        url: '/',
+        url: '/Auth',
     },
 ]
 

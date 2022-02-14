@@ -11,7 +11,7 @@ import { useNavigate } from 'react-router-dom';
 const initialState = { firstName: '', email: '', password: '', confirmPassword: '' , lastName: ''};
 
 const SignUp = () => {
-  const [form, setForm] = useState(initialState);
+  const [formData, setForm] = useState(initialState);
   const [isSignup, setIsSignup] = useState(false);
   const classes = useStyles();
   const navigate = useNavigate();
@@ -36,15 +36,15 @@ const SignUp = () => {
       Connecting Backend Code
     */
     if (isSignup) {
-      dispatch(signup(form,navigate));
+      dispatch(signup(formData,navigate));
 
       console.log("Signup")
     } else {
-      dispatch(signin(form,navigate))
+      dispatch(signin(formData,navigate))
     }
   };
   
-  const handleChange = (e) => setForm({ ...form, [e.target.name]: e.target.value });
+  const handleChange = (e) => setForm({ ...formData, [e.target.name]: e.target.value });
 
   return(
     <div className={classes.background}> 

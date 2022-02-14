@@ -2,4 +2,4 @@ import { combineReducers } from "redux";
 
 import post from './accounts';
 
-export default combineReducers({post});
+export const reducers = combineReducers({post});

@@ -30,5 +30,8 @@ export default makeStyles((theme) => ({
     },
     appSpace:{
         paddingTop: '56px',
+    },
+    signIn:{
+        float: 'right',
     }
 }))

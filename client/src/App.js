@@ -25,7 +25,6 @@ function App() {
                     </div>
                 </Layout>
             </div>
-            <h1>Hello Gamers!!!!</h1>
         </div>
     );
 }

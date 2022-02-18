@@ -49,4 +49,9 @@ export default makeStyles((theme) => ({
   googleButton: {
     marginBottom: theme.spacing(2),
   },
+  passwordProgressBar:{
+    width: '95%',
+    marginLeft: '11px',
+  }
+  //style={{ width: '90%' , marginLeft: '11px'  }}
 }));

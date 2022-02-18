@@ -78,7 +78,7 @@ export const Home = () => {
       </Grid>
     </Box>
         <footer className={classes.footer}>
-          © Devsquad established in 2020
+          © Devsquad established in 2021
         </footer>
       </>
     )

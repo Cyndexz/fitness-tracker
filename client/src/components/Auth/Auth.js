@@ -1,10 +1,9 @@
 import React, { useState } from 'react';
-import { Avatar, Button, Paper, Grid, Typography, Container } from '@material-ui/core';
+import { Avatar, Button, Paper, Grid, Typography} from '@material-ui/core';
 import LockOutlinedIcon from '@material-ui/icons/LockOutlined';
 import useStyles from './styles';
 import Input from './Input';
 import { useDispatch } from 'react-redux';
-import { Link } from 'react-router-dom';
 import { signin,signup } from '../../actions/accounts.js';
 import { useNavigate } from 'react-router-dom';
 
@@ -81,7 +80,6 @@ const SignUp = () => {
       </div>
     </div>
   )
- 
 };
 
 export default SignUp;

@@ -1,12 +1,10 @@
 import React, {useState} from 'react';
-import {Container, Grid , Paper, TextField, Typography,Card,CardContent, FormControl, InputLabel, NativeSelect, Avatar} from '@mui/material';
+import {Container, Grid , Paper, TextField, Typography,Card,CardContent, FormControl, InputLabel, NativeSelect, Avatar, Divider} from '@mui/material';
 import useStyles from './styles';
-import { useTheme } from '@mui/material/styles';
 import ModeIcon from '@mui/icons-material/Mode';
 import SaveAsIcon from '@mui/icons-material/SaveAs';
 import EditOffIcon from '@mui/icons-material/EditOff';
 import MonitorWeightIcon from '@mui/icons-material/MonitorWeight';
-import NavBar from '../Navbar/Navbar';
 
 import Snackbar from "@mui/material/Snackbar";
 import MuiAlert from "@mui/material/Alert";
@@ -22,16 +20,14 @@ import workoutTypePic3 from '../../images/stairStepper.jpg';
 
 import Graph from './Graph/Graph';  
 import TopWorkout from './TopWorkout/TopWorkout';
-import { Button, Icon } from '@material-ui/core';
+import { Button } from '@material-ui/core';
 const Profile = () => {
 
-    const theme = useTheme();
     const classes = useStyles();
     const [isUpdate, setIsUpdate] = useState(false);
     const [isWeight, setIsWeight] = useState(false);        
     const [openSuccess, setOpenSuccess] = useState(false);
     const [openFailure, setOpenFailure] = useState(false);
-    const [dateRange, setDateRange] = useState("");
     
     //Testing until we can connect to backend
     const age = 24;
@@ -91,8 +87,8 @@ const Profile = () => {
     
     return( 
         <Container maxWidth="xl" sx={{marginTop: 8}}>    
-            <NavBar/>
-            
+            <Typography variant="h1" className={classes.title}>My Profile</Typography>
+            <Divider thiccness={10}/>
             <Grid container spacing={2}>
                 <Grid item xs={12} sm={12} md={6} className={classes.grid} container >
                     <Avatar src={icon} className={classes.profilePicture} sx={{ width: 400  , height: 400 }}/>
@@ -101,7 +97,6 @@ const Profile = () => {
                 <Grid item xs={12} sm={12} md={6} >    
                     <Card sx={{minWidth:"auto", minHeight:300}}>
                         <CardContent align="left">
-                            <Typography align="center" variant="h4">Profile</Typography>
                             {isUpdate ? 
                                 <Grid height={300} container direction={"column"} spacing={3} >
                                     <Grid item xs={4} md={2}>

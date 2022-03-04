@@ -3,7 +3,7 @@ import {AppBar, Avatar, Box,Tooltip, Toolbar, Typography, IconButton, Menu, Cont
 import MenuIcon from '@mui/icons-material/Menu';
 import logo from '../../images/fitnesslogo.png';
 import useStyles from './styles';
-import {Link, useNavigate, useLocation} from 'react-router-dom';
+import {Link, useNavigate, useLocation,} from 'react-router-dom';
 import { MenuItems, Settings } from './MenuItems';
 import { useDispatch } from 'react-redux';
 import { LOGOUT } from '../../constants/actionTypes';
@@ -20,6 +20,8 @@ const ResponsiveAppBar = () => {
   const dispatch = useDispatch();
   const navigate = useNavigate();
   const location = useLocation();
+  const path = location.pathname === '/auth';
+
 
   const logout = () => {
     dispatch({type: LOGOUT});
@@ -27,9 +29,15 @@ const ResponsiveAppBar = () => {
     setUser(null);
   };
 
+  const [visibility, setVisibility] = useState('flex');
+  const visRef = React.useRef();
+  visRef.current = visibility
+
   useEffect((logout, user) => {
+    path ? setVisibility('none') : setVisibility('flex');
+    console.log(path);
     setUser(JSON.parse(localStorage.getItem('profile')));
-  },[location]);
+  },[location, path]);
 
   const handleSignIn = (() =>{},[location]);
 
@@ -51,24 +59,43 @@ const ResponsiveAppBar = () => {
     setAnchorElUser(null);
   };
 
+  const [navBg, setNavBg] = useState('rgba(0, 143, 255, 1)');
+  const navRef = React.useRef();
+  navRef.current = navBg;
+
+  /* Will check if the scroll passes 100 and if it does it will change the opacity of the navbar
+   * done by adding a listening and the use effect to keep listening to the scroll of the window
+   */
+  useEffect(() => {
+    const handleScroll = () => {
+      const show = window.scrollY > 100
+      show ? setNavBg('rgba(0, 145, 255, 0.51)') : setNavBg('rgba(0, 143, 255, 1)');
+    }
+    document.addEventListener('scroll', handleScroll)
+    return () => {
+      document.removeEventListener('scroll', handleScroll)
+    }
+  }, [])
+
   return (
     <>
-    <AppBar className={classes.appbar} sx={{backgroundColor: 'rgba(0, 143, 255, 1)'}} position="fixed">
+    <AppBar className={classes.appBar} sx={{backgroundColor: [navRef.current]}} position="fixed" >
       <Container maxWidth="xl">
-      {user?.result ? (
-            <Toolbar disableGutters>
-              <Typography variant="h6" noWrap component="div" sx={{ mr: 2, display: { xs: 'none', md: 'flex' } }}>
-                <img height='100px' src={logo} alt="Fitness"/>
-              </Typography>
+        <Toolbar disableGutters>
+          <Typography variant="h6" noWrap component="div" sx={{ mr: 2, display: { xs: 'none', md: 'inline',  } }}>
+            <a href="/"> <img height='100px' src={logo} alt="Fitness"/> </a>
+          </Typography>
 
-              <Box sx={{ flexGrow: 1, display: { xs: 'flex', md: 'none' } }}>
+      {user?.result ? (
+            <>
+              <Box sx={{ flexGrow: 1, display: { xs: 'flex', md: 'none' }}}>
                 <IconButton size="large" aria-label="account of current user" aria-controls="menu-appbar" aria-haspopup="true" onClick={handleOpenNavMenu} color="inherit">
                   <MenuIcon />
                 </IconButton>
-                <Menu id="menu-appbar" anchorEl={anchorElNav} anchorOrigin={{vertical: 'bottom',horizontal: 'left',}} keepMounted transformOrigin={{vertical: 'top',horizontal: 'left',}} open={Boolean(anchorElNav)} onClose={handleCloseNavMenu} sx={{display: { xs: 'block', md: 'none' },}}>
+                <Menu id="menu-appbar" anchorEl={anchorElNav} anchorOrigin={{vertical: 'bottom',horizontal: 'left',}} keepMounted transformOrigin={{vertical: 'top',horizontal: 'left',}} open={Boolean(anchorElNav)} onClose={handleCloseNavMenu} sx={{display: { xs: 'block', md: 'none' }, fontColor: 'Black'}}>
                   {MenuItems.map((item, index) => (
                     <MenuItem key={index} onClick={handleCloseNavMenu}>
-                        <Typography textAlign="center"><a className={classes.navLinks} href={item.url}>{item.title}</a></Typography>
+                        <Typography textAlign="center"><a className={classes.navLinksv3} href={item.url}>{item.title}</a></Typography>
                       </MenuItem>
                   ))}
                 </Menu>
@@ -77,7 +104,7 @@ const ResponsiveAppBar = () => {
               <Typography variant="h6" noWrap component="div" sx={{ flexGrow: 1, display: { xs: 'flex', md: 'none' } }}>
                 <img height='100px' src={logo} alt="Fitness"/>
               </Typography>
-              <Box sx={{ flexGrow: 1, display: { xs: 'none', md: 'flex' } }}>
+              <Box sx={{ flexGrow: 1, display: { xs: 'none', md: 'flex' }}}>
                 {MenuItems.map((item, index) => (
                   <Button key={index} onClick={handleCloseNavMenu} sx={{ my: 2, color: 'white', display: 'block' }}>
                     <a className={classes.navLinks} href={item.url}>{item.title}</a>
@@ -85,7 +112,7 @@ const ResponsiveAppBar = () => {
                 ))}
               </Box>
               <Box sx={{ flexGrow: 0 }}>
-                <Tooltip title="Open settings">
+                <Tooltip title="Open user settings">
                   <IconButton onClick={handleOpenUserMenu} sx={{ p: 0 }}>
                     <Avatar sx={{height:'70px', width:'70px'}} alt="Undefined" src={icon}/>
                   </IconButton>
@@ -99,12 +126,18 @@ const ResponsiveAppBar = () => {
                   ))}
                 </Menu>
               </Box>
-              </Toolbar>
+            </>
           ) : (
-            <Toolbar className={classes.signIn}>
-              <Button  component={Link} to="/auth" variant="contained" color="primary" onClick={e => handleSignIn}>Sign In</Button>
-            </Toolbar>
+            <>
+            <Typography variant="h6" noWrap component="div" sx={{ flexGrow: 1, display: { xs: 'flex', md: 'none' } }}>
+            <img height='100px' src={logo} alt="Fitness"/>
+            </Typography>
+            <Box className={classes.signIn} sx={{ flexGrow: 1, display: { xs: 'flex', md: 'flex'}, flexDirection: 'row-reverse'}}>
+              <Button component={Link} to="/auth" variant="contained" color="primary" sx={{display: [visRef.current]}} onClick={e => handleSignIn}>Sign Up</Button>
+            </Box>
+            </>
           )}
+      </Toolbar>
       </Container>
     </AppBar>
     <Toolbar className={classes.appSpace}/>

@@ -4,8 +4,9 @@ import Home from './components/Home/Home'
 import Auth from './components/Auth/Auth'
 import Profile from './components/Profile/Profile'
 import Workouts from './components/Workouts/Workouts';
-import { Routes, Route, Link } from 'react-router-dom';
-import { Layout, Typography, Space, Menu } from 'antd';
+import Meals from './components/Meals/Meals';
+import { Routes, Route} from 'react-router-dom';
+import { Layout } from 'antd';
 
 function App() {
     return(
@@ -17,15 +18,15 @@ function App() {
                 <Layout>
                     <div>
                         <Routes>
-                            <Route exact path='/' element={<Home />} />
                             <Route exact path='/Auth' element={<Auth />} />
+                            <Route exact path='/' element={<Home />} />
                             <Route exact path='/profile:id' element={<Profile />} />
                             <Route exact path='/workouts' element={<Workouts />} />
+                            <Route exact path='/meals' element={<Meals/>} />
                         </Routes>
                     </div>
                 </Layout>
             </div>
-            <h1>Hello Gamers!!!!</h1>
         </div>
     );
 }

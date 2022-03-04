@@ -1,8 +1,10 @@
 import React, {useState} from 'react';
-import { TextField, Stack, Typography, Grid, Autocomplete, Box, InputAdornment, FormControl, Button, Divider} from '@mui/material';
+import { TextField, Stack, Typography, Autocomplete, Box, InputAdornment, FormControl, Button, Divider} from '@mui/material';
 import { LocalizationProvider, DatePicker, DateRangePicker } from '@mui/lab';
 import AdapterDateFns from '@mui/lab/AdapterDateFns';
 import useStyles from './styles';
+import { DataGrid } from '@mui/x-data-grid';
+import { useMovieData } from '@mui/x-data-grid-generator';
 
 const Workouts = () => {
   const classes = useStyles();
@@ -104,10 +106,26 @@ const Workouts = () => {
         </LocalizationProvider>
   );
 
+  const data = useMovieData();
+
+  const renderTable = () =>(
+    <div style={{ height: 400, width: '100%' }}>
+    <DataGrid
+      {...data}
+      disableSelectionOnClick
+      disableRowGrouping
+      experimentalFeatures={{
+        rowGrouping: true,
+      }}
+    />
+  </div>
+  )
+
   return(
     <>
       <Typography variant="h1" className={classes.title}>Workouts</Typography>
-      <Divider thiccness={10}/>
+      <Divider thickness={10}/>
+
       <Typography variant="h4" className={classes.title}>Insert New Workout</Typography>
       
       <Stack direction="column" sx={{paddingLeft: '30px'}} >
@@ -140,6 +158,8 @@ const Workouts = () => {
         <Button variant="contained" size="large">Submit</Button>
       </Box>
       </Stack>
+
+      {renderTable()};
     </>
 
   );

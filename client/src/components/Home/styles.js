@@ -16,13 +16,14 @@ export default makeStyles((theme) => ({
         width: '100%',
         flexDirection: 'column',
         alignItems: 'center',
-        zindex: '1',
+        zIndex: '1',
         margin: '0',
-        position: 'relative',
         fontSize: '5rem',
         color: 'white',
         textShadow: '0 0 5px black',
-        paddingTop: '200px'
+        paddingTop: '200px',
+        fontFamily: 'Play',
+        position: 'relative',
         
     },
     section: {
@@ -41,8 +42,9 @@ export default makeStyles((theme) => ({
         justifyContent: 'center',
         width: '100%',
         height: '100%',
-        backgroundRepeat: 'no-repeat',
+        backgroundRepeat: 'round',
         position: 'absolute',
+        zIndex: '1',
     },
     foreground:{
         objectfit: 'cover',
@@ -53,6 +55,7 @@ export default makeStyles((theme) => ({
         height: '100%',
         backgroundRepeat: 'no-repeat',
         position: 'absolute',
+        zIndex: '1',
     },
     parallexdiv: {
         display: 'flex',
@@ -61,10 +64,8 @@ export default makeStyles((theme) => ({
         alignItems: 'center',
     },
     headers:{
-        display: 'flex',
         fontSize: '3rem',
-        paddingTop: '560px',
-        zindez: '1',
+        paddingTop: '400px',
     },
     pics:{
         width: '250px',

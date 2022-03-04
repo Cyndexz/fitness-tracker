@@ -1,5 +1,4 @@
 import { makeStyles } from '@material-ui/core/styles';
-import { maxHeight } from '@mui/system';
 //181a1b
 const buttonSize = '200px';
 export default makeStyles((theme) => ({
@@ -64,7 +63,6 @@ export default makeStyles((theme) => ({
   },
   buttonKg:{
     marginTop: 100,
-    width: buttonSize,
     height: '135px',
     width: "100%",
     backgroundColor: "orange",
@@ -78,6 +76,9 @@ export default makeStyles((theme) => ({
   col: {
     width: '300px',
     float: 'left',
-    }
+    },
+    title: {
+      padding: '30px',
+  },
 
 } ));

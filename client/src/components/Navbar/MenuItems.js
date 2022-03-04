@@ -11,14 +11,6 @@ export const MenuItems = [
         title: 'Workouts',
         url: '/workouts',
     },
-    {
-        title: 'Track Meals',
-        url: '/trackmeals',
-    },
-    {
-        title: 'Track Workouts',
-        url: '/trackworkouts',
-    },
 ]
 
 export const Settings =[
@@ -28,7 +20,7 @@ export const Settings =[
     },
     {
         title: 'Logout',
-        url: '/Auth',
+        url: '/',
     },
 ]
 

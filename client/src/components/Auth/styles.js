@@ -1,12 +1,11 @@
 
 import { makeStyles } from '@material-ui/core/styles';
-import imageWall from '../../images/sunset.jpg';
+import imageWall from '../../images/kettle.jpg';
 
 export default makeStyles((theme) => ({
   background: {
     backgroundImage: `url(${imageWall})`,
     display: 'flex',
-    justifyContent: 'center',
     width: '100%',
     height: '100%',
     
